@@ -1,0 +1,34 @@
+Layout,Back,Name,Num Copies,Type,Type Prefix,Description
+Special,Farm,Zoo,2,Special,s_,Each player must place 1 animal from their farm on the zoo
+Special,Farm,Harsh Winter,2,Special,s_,Each player discards their hand
+Special,Farm,Barn,4,Special,s_,Can store up to two animals facedown (may add two immediately)
+Special,Farm,Market Day,4,Special,s_,Fill market til 2 animals per player. Go around twice and each player may purchase 1 animal or pass.
+Special,Farm,Swap Meet,4,Special,s_,Each player may take 1 animal from the player on their left
+Special,Farm,Favor,6,Special,s_,"Look at top 5 cards of deck, put 1 in your hand and discard the rest"
+Default,Farm,Ostrich,2,Animal,a_,
+Default,Farm,Yak,2,Animal,a_,
+Default,Farm,Llama,2,Animal,a_,
+Default,Farm,Donkey,3,Animal,a_,
+Default,Farm,Horse,3,Animal,a_,
+Default,Farm,Cow,3,Animal,a_,
+Default,Farm,Turkey,3,Animal,a_,
+Default,Farm,Goat,4,Animal,a_,
+Default,Farm,Sheep,4,Animal,a_,
+Default,Farm,Pig,4,Animal,a_,
+Default,Farm,Dog,4,Animal,a_,
+Default,Farm,Duck,6,Animal,a_,
+Default,Farm,Chicken,6,Animal,a_,
+Nameless,Farm,Money,16,Resource,r_,
+Blank,Self,Money,12,Resource,r_,
+Farmer,Self,Mac,1,Farmer,f_,Goes First
+Farmer,Self,Henry,1,Farmer,f_,Start with 1 Favor
+Farmer,Self,George,1,Farmer,f_,Start with 2 Money
+Farmer,Self,William,1,Farmer,f_,Start with 1 Barn
+Farmer,Self,Mary,1,Farmer,f_,Start with 1 Sheep
+Farmer,Self,Abigail,1,Farmer,f_,Start with 1 Goat
+Farmer,Self,James,1,Farmer,f_,Start with 1 Pig
+Farmer,Self,Charles,1,Farmer,f_,Start with 1 Dog
+Farmer,Self,Anna,1,Farmer,f_,Market Dibs
+Farmer,Self,Caroline,1,Farmer,f_,Start with 1 Market Day
+Default,Self,Wallet,6,,r_,
+Blank,Self,Farm,-1,,c_,
