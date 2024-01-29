@@ -12,7 +12,7 @@ public static class CsvImporter
 
         for (var i = 1; i < lines.Length; i++)
         {
-            var columns = lines[i].Split(',');
+            var columns = lines[i].Split('|');
 
             var back = columns[1];
             var name = columns[2];

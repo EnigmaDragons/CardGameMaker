@@ -10,7 +10,7 @@ public class CardScreenshotExporter : MonoBehaviour
     [SerializeField] private string baseExportPathDir;
     [SerializeField] private string cardDbPath;
     [SerializeField] private CardPresenter[] cardPresenters;
-    [SerializeField] private Color transparentColor = Color.black;
+    [SerializeField] private bool printOnlyOneCopyOfEachCard = true;
 
     private Dictionary<string, CardPresenter> cardPresentersByLayout;
     
@@ -36,7 +36,7 @@ public class CardScreenshotExporter : MonoBehaviour
         var i = 0;
         foreach (var c in cards)
         {
-            for (var n = 0; n < (c.NumCopies > 0 ? c.NumCopies : 1); n++)
+            for (var n = 0; n < (c.NumCopies > 0 && !printOnlyOneCopyOfEachCard ? c.NumCopies : 1); n++)
             {
                 HidePresenters();
                 cardPresentersByLayout[c.Layout].Activate(c);
@@ -101,17 +101,7 @@ public class CardScreenshotExporter : MonoBehaviour
         foreach (var cardPresenter in cardPresenters)
             cardPresenter.gameObject.SetActive(false); 
     }
-    
-    private void ShowCard(ICardType c)
-    {
-        
-    }
-    
-    private void ShowCardBack(ICardType c)
-    {
-        
-    }
-    
+
     private void ExportCard(int idx, string cardName, bool isBack)
         => ExportCard((isBack ? "b" : "f") + "_" + (idx + 1).ToString().PadLeft(3, '0') + "_" + cardName.Replace(" ", "").ToLowerInvariant());
     
@@ -122,12 +112,12 @@ public class CardScreenshotExporter : MonoBehaviour
 
         var newTexture = new Texture2D(tex.width, tex.height, TextureFormat.ARGB32, false);
         var pixels = tex.GetPixels();
-        for (var i = 0; i < pixels.Length; i++)
-        {
-            var p = pixels[i];
-            if (p.r == transparentColor.r && p.g == transparentColor.g && p.b == transparentColor.b)
-                pixels[i] = Color.clear;
-        }
+        // for (var i = 0; i < pixels.Length; i++)
+        // {
+        //     var p = pixels[i];
+        //     if (p.r == transparentColor.r && p.g == transparentColor.g && p.b == transparentColor.b)
+        //         pixels[i] = Color.clear;
+        // }
 
         newTexture.SetPixels(pixels);
         var pngShot = ImageConversion.EncodeToPNG(newTexture);
